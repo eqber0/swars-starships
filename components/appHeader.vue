@@ -1,22 +1,26 @@
 <template>
   <header class="header">
     <div class="container">
-      <div class="header__nav d-flex"></div>
-      <div class="header__nav-item"></div>
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/contact">Contact</NuxtLink>
+      <NuxtLink class="header__logo" to="/">
+        <img src="~/assets/qbr.svg" alt="" />
+      </NuxtLink>
     </div>
   </header>
 </template>
 
 <style lang="scss">
 .header {
-  &__nav {
-    &-item {
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
+  padding: 50px 0;
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 160px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }

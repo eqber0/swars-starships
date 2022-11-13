@@ -5,24 +5,24 @@ import axios from "axios";
 Vue.use(Vuex);
 
 export const state = () => ({
-  peoples: [],
+  starshipsList: [],
 });
 
 export const mutations = {
-  peoplePush(state, data) {
-    const people = [];
-    people.push(data);
-    state.peoples = [...state.peoples, ...people];
+  starshipsPush(state, data) {
+    const starships = [];
+    starships.push(data);
+    state.starshipsList = [...state.starshipsList, ...starships];
   },
 };
 
 export const actions = {
-  peopleRequest({ commit }) {
+  starshipsRequest({ commit }) {
     let th = this;
     function deneme(link) {
       return axios(link).then((response) => {
         response.data.results.forEach((e) => {
-          commit("peoplePush", e);
+          commit("starshipsPush", e);
         });
         if (response.data.next) {
           deneme(response.data.next);

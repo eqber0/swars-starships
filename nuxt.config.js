@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "vue-nuxt-exercise",
+    title: "Star Wars Starships",
     htmlAttrs: {
       lang: "en",
     },
