@@ -19,7 +19,9 @@
             alt=""
           />
         </div>
-        <div class="starship-card__title">NAME: {{ starships.name }}</div>
+        <div class="starship-card__title txt txt--rem32 txt--font400 c-white">
+          NAME: {{ starships.name }}
+        </div>
       </NuxtLink>
     </div>
   </div>
