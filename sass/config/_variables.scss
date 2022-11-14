@@ -11,17 +11,21 @@ $transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
 $c-black: #000000;
 
 :root {
-    --transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
-    --transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
-    --transition-slow: 0.4s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition-slow: 0.4s cubic-bezier(0.29, 0.13, 0.27, 0.74);
 
-    --c-white: #ffffff;
-    --c-black: #000000;
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-primary: #2049d9;
 }
 
 .c-white {
-    color: var(--c-white);
+  color: var(--c-white);
 }
 .c-black {
-    color: var(--c-black);
+  color: var(--c-black);
+}
+.c-primary {
+  color: var(--c-primary);
 }
