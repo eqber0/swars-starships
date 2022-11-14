@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export const state = () => ({
   starshipsList: [],
+  preloaderHidden: false,
 });
 
 export const mutations = {
@@ -14,20 +15,32 @@ export const mutations = {
     starships.push(data);
     state.starshipsList = [...state.starshipsList, ...starships];
   },
+  hidePreloader(state, data) {
+    if (data) {
+      state.preloaderHidden = data;
+    }
+  },
 };
 
 export const actions = {
   starshipsRequest({ state, commit }) {
+    commit("hidePreloader", false);
     if (state.starshipsList.length == 0) {
       function getStarships(link) {
-        axios(link).then((response) => {
-          response.data.results.forEach((e) => {
-            commit("starshipsPush", e);
+        axios(link)
+          .then((response) => {
+            response.data.results.forEach((e) => {
+              commit("starshipsPush", e);
+            });
+            if (response.data.next) {
+              getStarships(response.data.next);
+            }
+          })
+          .finally(() => {
+            setTimeout(() => {
+              commit("hidePreloader", true);
+            }, 1000);
           });
-          if (response.data.next) {
-            getStarships(response.data.next);
-          }
-        });
       }
       getStarships("https://swapi.dev/api/starships");
     }

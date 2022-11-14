@@ -42,17 +42,12 @@ import { mapState } from "vuex";
 
 export default {
   name: "IndexPage",
-  data() {
-    return {
-      loading: true,
-    };
-  },
-
   created() {
-    this.$store.dispatch("starshipsRequest");
+    this.$store.dispatch("starshipsRequest", "hiddenPreloader");
   },
+  mounted() {},
   computed: {
-    ...mapState(["starshipsList"]),
+    ...mapState(["starshipsList", "hidePreloader"]),
   },
 };
 </script>
