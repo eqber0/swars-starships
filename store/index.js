@@ -17,19 +17,20 @@ export const mutations = {
 };
 
 export const actions = {
-  starshipsRequest({ commit }) {
-    let th = this;
-    function deneme(link) {
-      return axios(link).then((response) => {
-        response.data.results.forEach((e) => {
-          commit("starshipsPush", e);
+  starshipsRequest({ state, commit }) {
+    if (state.starshipsList.length == 0) {
+      function getStarships(link) {
+        axios(link).then((response) => {
+          response.data.results.forEach((e) => {
+            commit("starshipsPush", e);
+          });
+          if (response.data.next) {
+            getStarships(response.data.next);
+          }
         });
-        if (response.data.next) {
-          deneme(response.data.next);
-        }
-      });
+      }
+      getStarships("https://swapi.dev/api/starships");
     }
-    deneme("https://swapi.dev/api/starships");
   },
 };
 

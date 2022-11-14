@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "IndexPage",
   data() {
@@ -34,13 +36,11 @@ export default {
     };
   },
 
-  mounted() {
+  created() {
     this.$store.dispatch("starshipsRequest");
   },
   computed: {
-    starshipsList() {
-      return this.$store.state.starshipsList;
-    },
+    ...mapState(["starshipsList"]),
   },
 };
 </script>
