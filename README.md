@@ -1,4 +1,22 @@
-# vue-nuxt-exercise
+# [Star Wars Starships Explorer](https://graceful-kitten-724e51.netlify.app/)
+
+Welcome to the `swars-starships` repository! This project is a web application designed for Star Wars enthusiasts and anyone interested in the starships from the iconic series. Utilizing data from the Star Wars API (SWAPI), this app provides detailed information on various starships, their specifications, and their appearances in the Star Wars saga.
+
+## Features
+
+- **Explore Starships**: Browse through a comprehensive list of starships featured in the Star Wars universe.
+- **Detailed Information**: View detailed specifications of each starship, including model, manufacturer, cost in credits, length, crew requirements, and more.
+- **Film Appearances**: Discover which Star Wars films feature your favorite starships.
+- **Interactive UI**: Engage with an easy-to-use interface that makes exploring starships a fun experience.
+- **Responsive Design**: Enjoy a seamless experience across all devices, whether on desktop, tablet, or mobile.
+
+## Technologies Used
+
+- HTML5
+- SCSS
+- Vue.js (v2)
+- Nuxt.js (v2)
+- Nuxtjs Axios for API requests
 
 ## Build Setup
 
@@ -40,7 +58,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 
